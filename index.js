@@ -1,0 +1,28 @@
+function updateLosAngelesTime(){
+let losAngelesElement = document.querySelector("#los-angeles");
+if (losAngelesElement){
+let losAngelesDateElement = losAngelesElement.querySelector(".date")
+let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+let losAngelesTime = moment().tz("America/Los_Angeles");
+losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
+losAngelesTimeElement.innerHTML = losAngelesTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+}
+setInterval(updateLosAngelesTime, 1000);
+
+function updateBerlinTime(){
+
+  let berlinElement = document.querySelector("#berlin");
+if (berlinElement){
+let berlinDateElement = berlinElement.querySelector(".date")
+let berlinTimeElement = berlinElement.querySelector(".time");
+let berlinTime = moment().tz("Europe/Berlin");
+berlinDateElement.innerHTML = berlinTime.format("MMMM Do YYYY");
+berlinTimeElement.innerHTML = berlinTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+}
+setInterval(updateBerlinTime, 1000);
